@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // factory
         PaymentFactory paymentFactory = new PaymentFactory();
 
         Scanner scanner = new Scanner(System.in);
@@ -13,9 +12,6 @@ public class Main {
 
         System.out.println("Total bill is: " + bill);
 
-        System.out.print("Enter amount to pay: ");
-        int amount = scanner.nextInt();
-
         System.out.println("[1] Cash");
         System.out.println("[2] Gcash");
         System.out.println("[3] Card");
@@ -23,7 +19,7 @@ public class Main {
         int paymentMethod = scanner.nextInt();
 
         Payment payment = paymentFactory.getPayment(paymentMethod);
-        payment.pay(amount, bill);
+        payment.pay(bill);
 
 
     }

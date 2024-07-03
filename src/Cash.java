@@ -1,8 +1,16 @@
+import java.util.Scanner;
+
 public class Cash implements Payment {
+
+    Scanner scanner = new Scanner(System.in);
+
     @Override
-    public void pay(int amount, int bill) {
+    public void pay(int bill) {
+
+        System.out.print("Enter your cash: ");
+        int amount = scanner.nextInt();
 
         int total = amount - bill;
-        System.out.println("Gcash payment is now " + total);
+        System.out.println("Successfully paid " + bill + " change:  " + total);
     }
 }
